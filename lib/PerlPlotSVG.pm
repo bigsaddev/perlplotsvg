@@ -30,6 +30,11 @@ sub DrawCircle {
   push @canvas_svg, qq{<circle cx="$cx" cy="$cy" r="$r" fill="$color" />};
 }
 
+sub DrawText {
+  my ($x, $y, $text, $font_size, $color) = @_;
+  push @canvas_svg, qq{<text x="$x" y="$y" font-size="$font_size" fill="$color">$text</text>};
+}
+
 #######################
 # Finalization / Output
 sub RenderSVG {

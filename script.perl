@@ -8,5 +8,6 @@ use PerlPlotSVG;
 PerlPlotSVG::SetDimensions(800, 400);
 PerlPlotSVG::DrawRect(50, 50, 50, 50, "red");
 PerlPlotSVG::DrawCircle(50, 50, 25, "black");
+PerlPlotSVG::DrawText(150, 100, "Hello, SVG!", 24, "blue");
 
 PerlPlotSVG::SaveSVG();
