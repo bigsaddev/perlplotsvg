@@ -20,11 +20,17 @@ sub SetDimensions {
 # Drawing Functions
 sub DrawRect {
   # Takes arguments, generates the matching SVG tag and pushes it onto the buffer
-  my ($x, $y, $w, $h) = @_;
+  my ($x, $y, $w, $h, $color) = @_;
   # TODO: Add default styles and or style arguments
-  push @canvas_svg, qq{<rect x="$x" y="$y" width="$w" height="$h" fill="black" />};
+  push @canvas_svg, qq{<rect x="$x" y="$y" width="$w" height="$h" fill="$color" />};
 }
 
+sub DrawCircle {
+  my ($cx, $cy, $r, $color) = @_;
+  push @canvas_svg, qq{<circle cx="$cx" cy="$cy" r="$r" fill="$color" />};
+}
+
+#######################
 # Finalization / Output
 sub RenderSVG {
   # using a fancier way, use this if shit breaks
